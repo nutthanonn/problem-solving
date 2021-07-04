@@ -1,18 +1,24 @@
-#test case
-#  4 5
-# A - - #
+
+# n, m = 4,5
+# a = [["#A--#"], ["##-B#"], ["#AB##"], ["#####"]]
+# walk = [[1, 3, "L"], [0, 1, "R"]]
+
+# A – B #
+# B - A #
 # # - B #
 # A B # #
 # # # # #
-# 2
-# 1 3 L
+# 3
+# 0 1 L
+# 0 3 L
 # 0 1 R
-import timeit
-start = timeit.default_timer()
 
-n, m = 4,5
-a = [["#A--#"], ["##-B#"], ["#AB##"], ["#####"]]
-walk = [[1, 3, "L"], [0, 1, "R"]]
+
+
+n,m = 5, 5
+a = [["#A-B#"], ["#B-A#"], ["##-B#"], ["#AB##"], ["#####"]]
+walk = [[0, 1, "L"], [0, 3 ,"L"], [0, 1, "R"]]
+
 
 # R ขวา
 # L ซ้าย
@@ -47,29 +53,28 @@ def get_point(x, p, m):
         if txt[i] == "A":
             if txt[i + m] == "A":
                 txt[i+m], txt[i] = "-", "-"
-                point += 5
+                point += 10
             elif txt[i - 1] == "A":
                 txt[i-1], txt[i] = "-", "-"
-                point += 5
+                point += 10
             elif txt[i + 1] == "A":
                 txt[i+1], txt[i] = "-", "-"
-                point += 5
+                point += 10
         elif txt[i] == "B":
             if txt[i + m] == "B":
                 txt[i+m], txt[i] = "-", "-"
-                point += 5
+                point += 10
             elif txt[i - 1] == "B":
                 txt[i-1], txt[i] = "-", "-"
-                point += 5
+                point += 10
             elif txt[i + 1] == "B":
                 txt[i+1], txt[i] = "-", "-"
-                point += 5
+                point += 10
     for i in range(0, len(txt), m):
         c.append(["".join(txt[i:i+m])])
     return c, point
 
-    
-    
+
 # call function
 point = 0
 for i in walk:
@@ -82,10 +87,5 @@ for i in a:
         print(j)
 print(point)
 
-
+# check combo
 # check fall after replace '-' in function !
-
-
-
-stop = timeit.default_timer()
-print('Time: ', stop - start)  
