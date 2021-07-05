@@ -1,0 +1,53 @@
+html, body {
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    background-color: rgb(20, 20, 20);
+}
+
+.first {
+    font-size: 20px;
+    font-weight: 500px;
+}
+
+
+.manu {
+    color: white;
+    padding: 15px;
+    margin-right: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+.Main {
+    max-width: 600px;
+    margin: auto;
+}
+
+.low {
+    background-color: white;
+    padding: 20px;
+    margin: 30px;
+    margin-bottom: 100px;
+}
+.image {
+    width: 100%;
+}
+
+.button{
+    color: black;
+    background-color: lightgray;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.buttom {
+    background-color: rgb(134, 130, 130);
+    padding: 15px;
+    text-align: center;
+}
