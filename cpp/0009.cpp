@@ -1,6 +1,5 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-
 int main() {
     int num[3] = {};
     string text;
