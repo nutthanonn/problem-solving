@@ -3,9 +3,9 @@
 using namespace std;
 
 int main() {
-    double a, b, c;
+    float a, b, c;
     cin >> a >> b;
-    c = hypot(a,b);
-    printf("%f", c);
+    c = hypot(a, b);
+    cout << c;
     return 0;
 }

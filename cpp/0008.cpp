@@ -1,11 +1,9 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 int main() {
-    double a, b, c;
+    int a, b;
     cin >> a >> b;
-    c = hypot(a,b);
-    printf("%f", c);
+    cout << (b*2)-a;
     return 0;
 }
