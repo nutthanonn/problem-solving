@@ -1,12 +1,13 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 using namespace std;
 
 int main(){
-    srand(time(NULL));
-    for(int i=0;i<5;i++){
-        cout << rand() << " ";
+    int a[3] = {1, 2, 3};
+    int *p = a;
+    p = a;
+    *p = 5;
+    for(int i=0;i<3;i++){
+        cout << a[i] << endl;
     }
     return 0;
 }
