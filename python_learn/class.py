@@ -28,5 +28,6 @@ class student(school):
         print("Section : {}".format(self.section))
 
 
-obj1 = Teacher("nut", 1150, "math")
-obj1._showData()
+
+pim = student("pim", 1234, "2/3")
+pim._showData()
