@@ -1,29 +1,27 @@
 from tkinter import *
 import tkinter.messagebox
-from tkinter.colorchooser import *
-from tkinter.filedialog import *
 root = Tk()
 root.title("nut.py")
 root.geometry("500x500")
 
-def string():
-    mess = us.get()
-    la = Label(root, text=mess, fg="red").pack()
-
-def exitProgram():
-    comfirm = tkinter.messagebox.askquestion("Yes", "Exit ?")
-    if comfirm == "yes": root.destroy()
-
-def selectfile():
-    fileopen = askopenfile()
-    mylabel = Label(text=fileopen).pack()
 
 
 
-us = StringVar()
-txt = Entry(root, textvariable=us).pack()
-Click = Button(root, text="Click", command=string).pack()
-exit_root = Button(root, text="Exit", command=exitProgram).pack()
+Checkbutton(text="python").pack(anchor=W)
+
+
+# def show_choice():
+#     ch = select.get()
+#     if ch == 1: tkinter.messagebox.showinfo("Show", "Python Select")
+#     elif ch == 2: tkinter.messagebox.showinfo("Show", "JS Select")
+#     elif ch == 3: tkinter.messagebox.showinfo("Show","JAVA Select")
+#     elif ch == 4: tkinter.messagebox.showinfo("Show","HTML Select")
+
+# select = IntVar()
+# Radiobutton(text="Python", variable=select, value=1, command=show_choice).grid(row=0,column=0)
+# Radiobutton(text="JavaScrip",variable=select, value=2, command=show_choice).grid(row=0,column=1)
+# Radiobutton(text="Java", variable=select, value=3, command=show_choice).grid(row=0,column=2)
+# Radiobutton(text="HTML", variable=select, value=4, command=show_choice).grid(row=0,column=3)
 
 
 root.mainloop()
