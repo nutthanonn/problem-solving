@@ -1,3 +1,4 @@
+#My first Game
 from tkinter import *
 import random
 import tkinter.messagebox
@@ -110,11 +111,6 @@ def move_box():
             out += '\n'
     boxs.set(box)
     output.set(out)
-
-
-
-
-
 
 
 def Rule_game():
