@@ -129,7 +129,7 @@ def How():
 boxs = StringVar()
 positions = StringVar()
 output = StringVar()
-start = Button(text="Click to Start", command=show_message).grid(row=0, column=0)
+start = Button(text="Click to Start", command=show_message, fg="black").grid(row=0, column=0)
 out_put = Label(textvariable=output).grid(row=1, column=0)
 rule = Button(text="RULE", fg="red", command=Rule_game).grid(row=1, column=1)
 How_to_play = Button(text="How to play", command=How, fg="green").grid(row=2, column=1)
