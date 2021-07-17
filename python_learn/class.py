@@ -29,5 +29,5 @@ class student(school):
 
 
 
-pim = student("pim", 1234, "2/3")
+pim = student("Nut", 1234, "6/2")
 pim._showData()

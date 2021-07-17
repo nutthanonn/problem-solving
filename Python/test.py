@@ -1,0 +1,1 @@
+a = int(input()); b = (input() + input())*100;print(b[:a:])
