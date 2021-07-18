@@ -1,3 +1,3 @@
-function change(){
-    document.getElementById("p").innerHTML = "Hello"
+function time(){
+    document.getElementById("tag_time").innerHTML = Date()
 }
