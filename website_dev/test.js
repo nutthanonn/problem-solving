@@ -1,3 +1,3 @@
-function time(){
-    document.getElementById("tag_time").innerHTML = Date()
+function get(){
+    document.getElementById("tag").innerHTML = "<li>HelloHTML</li>"
 }
