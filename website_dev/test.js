@@ -1,3 +1,1 @@
-function get(){
-    document.getElementById("tag").innerHTML = "<li>HelloHTML</li>"
-}
+document.write("Nut")
