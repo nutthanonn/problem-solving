@@ -1,9 +1,16 @@
 import cv2
 
-img = cv2.imread('cat.jpeg', 0)
-imgre = cv2.resize(img, (400, 200))
+cap = cv2.VideoCapture("video.MOV")
 
+while (cap.isOpened()):
+    result, frame = cap.read()
 
-cv2.imshow('Cat', imgre)
-cv2.waitKey(delay=5000)
+    if result == True:
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        cv2.imshow('out', gray)
+        if cv2.waitKey(1) & 0xFF == ord("e"):
+            break
+    else:
+        break
+cap.release()
 cv2.destroyAllWindows()
