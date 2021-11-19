@@ -2,11 +2,14 @@
 using namespace std;
 
 
+void inc(int* y){
+    (*y)++;
+}
+
+
 int main(){
-    int x = 10;
-    int* p;  //Type pointer
-    p = &x; // poiter to x
-    cout << &x << endl;
-    cout << *p << endl;
-    cout << &p << endl;
+    int x = 5;
+    inc(&x);
+    cout << x << endl;
+    return 0;
 }
