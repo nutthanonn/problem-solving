@@ -2,14 +2,12 @@
 using namespace std;
 
 
-void inc(int* y){
-    (*y)++;
-}
+
 
 
 int main(){
-    int x = 5;
-    inc(&x);
-    cout << x << endl;
-    return 0;
+    string name = "nutthanon";
+    string* p = &name;
+    
+    cout << *p << endl;
 }
