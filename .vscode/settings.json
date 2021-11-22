@@ -1,6 +1,3 @@
 {
-  "discord.enabled": false,
-  "files.associations": {
-    "ostream": "cpp"
-  }
+  "discord.enabled": false
 }

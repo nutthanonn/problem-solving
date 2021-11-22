@@ -1,13 +1,10 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 
-
-
-
-int main(){
-    string name = "nutthanon";
-    string* p = &name;
-    
-    cout << *p << endl;
+int main() {
+    int a = 10;
+    int* p =  &a;
+    cout << *p << endl;    
 }
+
