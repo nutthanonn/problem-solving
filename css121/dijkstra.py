@@ -1,10 +1,16 @@
+goal, allPath = [int(x) for x in input().split()]
+
+
+
+
+
+
 graph = {
-    'a': {'b': 4, 'd': 2},
-    'b': {'a': 4, 'e': 3, 'c':3},
-    'c': {'b': 3, 'z': 2},
-    'd': {'a': 2, 'e': 3 },
-    'e': {'b': 3, 'z': 1, 'd': 3},
-    'z': {'c': 2, 'e': 1}
+    '1': {'2': 4, '4': 6},
+    '2': {'1': 4, '4': 8, '3': 2, '5': 9},
+    '3': {'5': 7, '2': 2},
+    '4': {'1': 6, '5': 1, '2': 8},
+    '5': {'2': 9, '3': 7, '4':1}
 }
 
 
@@ -55,7 +61,7 @@ def dijkstra(graph, start, goal):
         print("Width : " + str(shortest_distance[goal]))
         print("Path : " + str(track_path))
 
-dijkstra(graph, 'a', 'z')
+dijkstra(graph, '1', '5')
 
 
 
