@@ -11,6 +11,8 @@ func countOrders(n int) int {
 	return ans
 }
 
+//KNOCKCAT
+
 func main() {
 	number := 3
 	fmt.Println(countOrders(number))
