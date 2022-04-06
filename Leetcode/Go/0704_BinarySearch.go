@@ -3,16 +3,26 @@ package main
 import "fmt"
 
 func search(nums []int, target int) int {
-	for i := 0; i < len(nums); i++ {
-		if nums[i] == target {
-			return i
+	first := 0
+	last := len(nums) - 1
+
+	for first <= last {
+
+		midIndex := int((first + last) / 2)
+		midVal := nums[midIndex]
+		if midVal == target {
+			return midIndex
+		} else if midVal < target {
+			first = midIndex + 1
+		} else {
+			last = midIndex - 1
 		}
 	}
 	return -1
 }
 
 func main() {
-	number := []int{-1, 0, 3, 5, 9, 12}
-	target := 2
-	fmt.Println(search(number, target))
+	nums := []int{-1, 0, 3, 5, 9, 12}
+	taget := 9
+	fmt.Println(search(nums, taget))
 }
