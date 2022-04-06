@@ -1,5 +1,7 @@
 package main
 
+func isBadVersion(n int) bool
+
 func firstBadVersion(n int) int {
 	first := 1
 	last := n
