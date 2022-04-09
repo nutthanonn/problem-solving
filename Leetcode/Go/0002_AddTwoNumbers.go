@@ -1,79 +1,70 @@
-//   เเนวคิดเฉยๆ
-
 package main
 
 import (
-	"math"
-	"strconv"
+	"fmt"
 )
 
-type Node struct {
-	next *Node
+type ListNode struct {
 	Val  int
+	Next *ListNode
 }
 
-type linkedlist struct {
-	head *Node
-	size int
-}
-
-func (l *linkedlist) Insert(val int) {
-
-	new_node := Node{}
-	new_node.Val = val
-	if l.size == 0 {
-		l.head = &new_node
-		l.size++
-		return
-	}
-
-	ptr := l.head
-	for i := 0; i < l.size; i++ {
-		if ptr.next == nil {
-			ptr.next = &new_node
-			l.size++
-			return
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	prev := &ListNode{}
+	current := prev
+	sum := 0
+	for l1 != nil || l2 != nil {
+		if l1 != nil {
+			sum += l1.Val
+			l1 = l1.Next
 		}
-		ptr = ptr.next
+		if l2 != nil {
+			sum += l2.Val
+			l2 = l2.Next
+		}
+
+		current.Next = &ListNode{Val: sum % 10}
+		current = current.Next
+
+		if sum >= 10 {
+			sum = 1
+			continue
+		}
+		sum = 0
 	}
+
+	if sum == 1 {
+		current.Next = &ListNode{Val: sum}
+	}
+
+	return prev.Next
 }
 
-func addTwoNumbers(l1, l2 linkedlist) []string {
-	ptr1 := l1.head
-	ptr2 := l2.head
-	seq1 := 0
-	seq2 := 0
-
-	for i := 0; i < l1.size; i++ {
-		seq1 += ptr1.Val * int(math.Pow(10, float64(i)))
-		ptr1 = ptr1.next
+func (l *ListNode) Insert(val int) {
+	new_node := ListNode{Val: val}
+	ptr := l
+	for ptr.Next != nil {
+		ptr = ptr.Next
 	}
-	for i := 0; i < l2.size; i++ {
-		seq2 += ptr2.Val * int(math.Pow(10, float64(i)))
-		ptr2 = ptr2.next
-	}
-
-	temp := strconv.Itoa(seq1 + seq2)
-	arr := []string{}
-	for i := len(temp) - 1; i > -1; i-- {
-		arr = append(arr, string(temp[i]))
-	}
-
-	return arr
+	ptr.Next = &new_node
 }
 
+func (l *ListNode) Search() {
+	ptr := l
+	fmt.Println(ptr.Val)
+	for ptr.Next != nil {
+		ptr = ptr.Next
+	}
+}
 func main() {
-	l1 := linkedlist{}
-	l2 := linkedlist{}
-
-	l1.Insert(2)
+	l1 := &ListNode{Val: 2}
 	l1.Insert(4)
 	l1.Insert(3)
 
-	l2.Insert(5)
+	l2 := &ListNode{Val: 5}
 	l2.Insert(6)
 	l2.Insert(4)
 
-	addTwoNumbers(l1, l2)
-
+	a := addTwoNumbers(l1, l2)
+	a.Search()
 }
