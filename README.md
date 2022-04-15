@@ -1,3 +1,10 @@
 # Problem Solving
 
-### Algorithm by Nutthanon
+```typescript
+const CreateBy = (name: string): string => {
+  return `Create by ${name}`;
+};
+
+const MYNAME = "Nutthanon Thongcharoen";
+console.log(CreateBy(MYNAME));
+```
