@@ -1,4 +1,4 @@
 delete p1
-from person p1, person p2
-where p1.email = p2.email 
-    and p1.Id > p2.Id
+from Person as p1, Person as p2
+where p1.email = p2.email
+and p1.id > p2.id
