@@ -1,4 +1,4 @@
-name = "1729. Find Followers Count"
+name = "342. Power of Four"
 
 name = name.split()
 if len(name[0]) != 5:
