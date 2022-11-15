@@ -1,4 +1,4 @@
-name = "342. Power of Four"
+name = "1899. Merge Triplets to Form Target Triplet"
 
 name = name.split()
 if len(name[0]) != 5:
