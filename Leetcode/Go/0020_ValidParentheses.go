@@ -2,60 +2,31 @@ package main
 
 import "fmt"
 
-func inArr(arr [3]string, target string) bool {
-	for _, v := range arr {
-		if v == target {
-			return true
-		}
-	}
-	return false
-}
-
-func findIndex(arr [3]string, target string) int {
-	for i := 0; i < len(arr); i++ {
-		if arr[i] == target {
-			return i
-		}
-	}
-	return -1
-}
-
 func isValid(s string) bool {
-	openString := [3]string{"(", "{", "["}
-	closeString := [3]string{")", "}", "]"}
-	q := []string{}
-	if len(s) == 0 || len(s)%2 == 1 {
-		return false
-	}
+	field := make(map[rune]rune)
+	field[')'] = '('
+	field[']'] = '['
+	field['}'] = '{'
 
+	stack := make([]rune, 0)
 	for _, v := range s {
-		if inArr(openString, string(v)) {
-			q = append(q, string(v))
+		if v == '(' || v == '[' || v == '{' {
+			stack = append(stack, v)
+		} else {
+			if len(stack) == 0 {
+				return false
+			}
+			if field[v] != stack[len(stack)-1] {
+				return false
+			}
+			stack = stack[:len(stack)-1]
 		}
-
-		if len(q) == 0 && inArr(closeString, string(v)) {
-			return false
-		}
-
-		if len(q) > 0 && inArr(closeString, string(v)) && findIndex(openString, q[len(q)-1]) != findIndex(closeString, string(v)) {
-			return false
-		}
-
-		if len(q) > 0 && inArr(closeString, string(v)) && findIndex(openString, q[len(q)-1]) == findIndex(closeString, string(v)) {
-			q = q[:len(q)-1]
-		}
-
 	}
 
-	if len(q) == 0 {
-		return true
-	} else {
-		return false
-	}
-
+	return len(stack) == 0
 }
 
 func main() {
-	s := "([}}])"
-	fmt.Println(isValid(s))
+	fmt.Println(isValid("([}}])"))
+	fmt.Println(isValid("()[]{}"))
 }
